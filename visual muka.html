@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Klasifikasi Wajah</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      text-align: center;
+    }
+    .step {
+      display: none;
+    }
+    .step.active {
+      display: block;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Klasifikasi Visual Wajah</h1>
+
+  <div id="step1" class="step active">
+    <h2>1. Pilih Bentuk Rahang</h2>
+    <button onclick="selectOption('rahang', 'Rahang Tegas')">Rahang Tegas</button>
+    <button onclick="selectOption('rahang', 'Rahang Halus')">Rahang Halus</button>
+  </div>
+
+  <div id="step2" class="step">
+    <h2>2. Pilih Bentuk Hidung</h2>
+    <button onclick="selectOption('hidung', 'Hidung Pendek')">Hidung Pendek</button>
+    <button onclick="selectOption('hidung', 'Hidung Mancung')">Hidung Mancung</button>
+  </div>
+
+  <div id="step3" class="step">
+    <h2>3. Pilih Bentuk Alis</h2>
+    <button onclick="selectOption('alis', 'Alis Tebal')">Alis Tebal</button>
+    <button onclick="selectOption('alis', 'Alis Tipis')">Alis Tipis</button>
+  </div>
+
+  <div id="step4" class="step">
+    <h2>4. Pilih Bentuk Bibir</h2>
+    <button onclick="selectOption('bibir', 'Bibir Tipis')">Bibir Tipis</button>
+    <button onclick="selectOption('bibir', 'Bibir Tebal')">Bibir Tebal</button>
+  </div>
+
+  <div id="result" class="step">
+    <h2>Hasil Klasifikasi:</h2>
+    <p id="output"></p>
+  </div>
+
+  <script>
+    let userSelection = {};
+    let currentStep = 1;
+
+    function selectOption(kriteria, nilai) {
+      userSelection[kriteria] = nilai;
+      nextStep();
+    }
+
+    function nextStep() {
+      document.getElementById('step' + currentStep).classList.remove('active');
+      currentStep++;
+      if (currentStep <= 4) {
+        document.getElementById('step' + currentStep).classList.add('active');
+      } else {
+        showResult();
+      }
+    }
+
+    function showResult() {
+      document.getElementById('result').classList.add('active');
+      let output = `
+        Rahang: ${userSelection.rahang}<br>
+        Hidung: ${userSelection.hidung}<br>
+        Alis: ${userSelection.alis}<br>
+        Bibir: ${userSelection.bibir}
+      `;
+      document.getElementById('output').innerHTML = output;
+    }
+  </script>
+
+</body>
+</html>
