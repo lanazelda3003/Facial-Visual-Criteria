@@ -1,2 +1,2 @@
-.
+code dasar
 upgrade desain
