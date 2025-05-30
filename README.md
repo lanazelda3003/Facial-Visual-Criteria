@@ -5,3 +5,4 @@ penambahan button kembali
 uograde tampilan
 penambahan gambar 1 untuk contoh bold make up
 penambahan 2 gambar untuk contoh bold make up
+perbaikan desan
