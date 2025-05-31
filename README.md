@@ -9,3 +9,4 @@ perbaikan desan
 perubahan ukuran gambar 
 penambahan 3 gambar untuk contoh natural make up
 pemisahan file .html, .js, dan .css
+penambahan button sebelumnya
