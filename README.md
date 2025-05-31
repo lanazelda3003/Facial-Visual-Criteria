@@ -8,3 +8,4 @@ penambahan 2 gambar untuk contoh bold make up
 perbaikan desan
 perubahan ukuran gambar 
 penambahan 3 gambar untuk contoh natural make up
+pemisahan file .html, .js, dan .css
