@@ -1,5 +1,10 @@
 let step = 1;
-let userSelection = { rahang: '', hidung: '', alis: '', bibir: '' };
+let userSelection = {
+  rahang: '',
+  hidung: '',
+  alis: '',
+  bibir: ''
+};
 
 function selectOption(kriteria, nilai) {
   userSelection[kriteria] = nilai;
@@ -80,14 +85,14 @@ function showResult() {
 
   const output =
     '<ul style="list-style: none; padding: 0; margin: 0 auto 20px auto; max-width: 300px; color: #073763; font-weight: 600;">' +
-    '<li style="margin-bottom: 8px;">✅ Rahang: ' + r + '</li>' +
-    '<li style="margin-bottom: 8px;">✅ Hidung: ' + h + '</li>' +
-    '<li style="margin-bottom: 8px;">✅ Alis: ' + a + '</li>' +
-    '<li>✅ Bibir: ' + b + '</li>' +
+      '<li style="margin-bottom: 8px;">✅ Rahang: ' + r + '</li>' +
+      '<li style="margin-bottom: 8px;">✅ Hidung: ' + h + '</li>' +
+      '<li style="margin-bottom: 8px;">✅ Alis: ' + a + '</li>' +
+      '<li>✅ Bibir: ' + b + '</li>' +
     '</ul>' +
     '<div style="text-align: center; margin-bottom: 20px;">' +
-    '<strong>Kriteria Visual:</strong> ' + visual + '<br>' +
-    '<strong>Rekomendasi Makeup:</strong> ' + makeup +
+      '<strong>Kriteria Visual:</strong> ' + visual + '<br>' +
+      '<strong>Rekomendasi Makeup:</strong> ' + makeup +
     '</div>' +
     imageHtml;
 
@@ -101,3 +106,12 @@ function resetApp() {
   document.getElementById('step1').classList.add('active');
   document.getElementById('output').innerHTML = '';
 }
+
+function goBack() {
+  if (step > 1) {
+    document.getElementById('step' + step).classList.remove('active');
+    step--;
+    document.getElementById('step' + step).classList.add('active');
+  }
+}
+
